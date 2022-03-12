@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField]
     private float moveForce = 7f;
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D mRigidBody;
     private float directionX;
     private bool canJump = true;
+    private float restartDelay = 1f;
 
     private void Awake()
     {
@@ -45,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             canJump = true;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            FindObjectOfType<GameManager>().GameOver();
         }
     }
 }
