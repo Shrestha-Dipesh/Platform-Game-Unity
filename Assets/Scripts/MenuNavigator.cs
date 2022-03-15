@@ -7,10 +7,7 @@ using UnityEngine.UI;
 public class MenuNavigator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject selectionMenu;
-
-    [SerializeField]
-    private GameObject detailsMenu;
+    private GameObject selectionMenu, detailsMenu;
 
     [SerializeField]
     private Text playerName;
@@ -19,10 +16,9 @@ public class MenuNavigator : MonoBehaviour
     private Image playerImage;
 
     [SerializeField]
-    private Sprite circleImage;
+    private Sprite circleImage, squareImage;
 
-    [SerializeField]
-    private Sprite squareImage;
+    private string buttonClicked;
 
     public void SelectCharacter()
     {
@@ -34,8 +30,16 @@ public class MenuNavigator : MonoBehaviour
         Application.Quit();
     }
 
-    public void PlayGame()
+    public void LoadGame()
     {
+        if (buttonClicked == "Player 1 Button")
+        {
+            GameManager.instance.SelectedCharacter = "Player 1";
+        }
+        else if (buttonClicked == "Player 2 Button")
+        {
+            GameManager.instance.SelectedCharacter = "Player 2";
+        }
         SceneManager.LoadScene("Level 1");
     }
 
@@ -50,7 +54,7 @@ public class MenuNavigator : MonoBehaviour
         selectionMenu.SetActive(false);
         detailsMenu.SetActive(true);
 
-        string buttonClicked = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        buttonClicked = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         if (buttonClicked == "Player 1 Button")
         {
             playerName.text = "Circle";
