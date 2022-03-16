@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
         set { selectedCharacter = value; }
     }
 
+    private GameObject levelElements, completeUI;
+
     public void Awake()
     {
         if (instance == null)
@@ -65,6 +67,16 @@ public class GameManager : MonoBehaviour
             {
                 Instantiate(characters[1]);
             }
+
+            levelElements = GameObject.Find("Level Elements");
+            completeUI = GameObject.Find("Complete UI");
+            completeUI.SetActive(false);
         }
+    }
+
+    public void LevelComplete()
+    {
+        completeUI.SetActive(true);
+        levelElements.SetActive(false);
     }
 }

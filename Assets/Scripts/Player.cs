@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D mRigidBody;
     private float directionX;
     private bool canJump = true;
-    private float restartDelay = 1f;
 
     private void Awake()
     {
@@ -52,6 +51,12 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<GameManager>().GameOver();
+        }
+
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            Destroy(gameObject);
+            FindObjectOfType<GameManager>().LevelComplete();
         }
     }
 }
