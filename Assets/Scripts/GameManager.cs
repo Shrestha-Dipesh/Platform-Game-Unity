@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         set { selectedCharacter = value; }
     }
 
-    private GameObject levelElements, completeUI;
+    private GameObject levelElements, completeUI, gameOverUI;
 
     public void Awake()
     {
@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameEnded = true;
+        gameOverUI.SetActive(true);
+        levelElements.SetActive(false);
         Invoke("RestartGame", restartDelay);
     }
 
@@ -70,7 +72,10 @@ public class GameManager : MonoBehaviour
 
             levelElements = GameObject.Find("Level Elements");
             completeUI = GameObject.Find("Complete UI");
+            gameOverUI = GameObject.Find("Game Over UI");
+
             completeUI.SetActive(false);
+            gameOverUI.SetActive(false);
         }
     }
 
