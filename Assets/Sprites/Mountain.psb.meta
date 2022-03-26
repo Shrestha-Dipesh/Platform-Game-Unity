@@ -91,28 +91,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Tree
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1932
-      y: 4
-      width: 474
-      height: 766
-    spriteID: c3ce2a32ffbc78245b7c1cd08505fb93
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 907, y: 4}
   - name: Front Mountain
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -187,50 +165,6 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3551
-      width: 1920
-      height: 325
-    spriteID: c69da7840cd6dd0478f3974bab4a18fb
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 2878}
-  - name: Sun
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 3884
-      width: 148
-      height: 149
-    spriteID: d05779a34b807c143ba39b05b9c62927
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -187, y: 2986}
-  - name: Sky_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
       y: 4
       width: 1920
       height: 1080
@@ -245,6 +179,50 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
+  - name: Cloud
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3551
+      width: 1920
+      height: 442
+    spriteID: fe276b59623f116408194135870d5d7b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 2995}
+  - name: Sun
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 4
+      width: 563
+      height: 406
+    spriteID: dd8c081259c28cc47ae80263d0c4a75f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1932, y: -670}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -264,13 +242,6 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Tree
-    spriteName: Tree
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c3ce2a32ffbc78245b7c1cd08505fb93
-    layerID: 35
-    mosaicPosition: {x: 1932, y: 4}
   - name: Front Mountain
     spriteName: Front Mountain
     isGroup: 0
@@ -292,22 +263,22 @@ ScriptedImporter:
     spriteID: e003ac59cdbdd244685a7a1c84979d3a
     layerID: 8
     mosaicPosition: {x: 4, y: 1092}
-  - name: Sky
-    spriteName: Sky
+  - name: Cloud
+    spriteName: Cloud
     isGroup: 0
     parentIndex: -1
-    spriteID: c69da7840cd6dd0478f3974bab4a18fb
-    layerID: 17
+    spriteID: fe276b59623f116408194135870d5d7b
+    layerID: 38
     mosaicPosition: {x: 4, y: 3551}
   - name: Sun
     spriteName: Sun
     isGroup: 0
     parentIndex: -1
-    spriteID: d05779a34b807c143ba39b05b9c62927
-    layerID: 20
-    mosaicPosition: {x: 4, y: 3884}
+    spriteID: dd8c081259c28cc47ae80263d0c4a75f
+    layerID: 37
+    mosaicPosition: {x: 1932, y: 4}
   - name: Sky
-    spriteName: Sky_1
+    spriteName: Sky
     isGroup: 0
     parentIndex: -1
     spriteID: 5683b1eb88be34746afd70e9e2a8cdad
