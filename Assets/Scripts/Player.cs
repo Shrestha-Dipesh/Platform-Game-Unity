@@ -11,24 +11,40 @@ public class Player : MonoBehaviour
     private float jumpForce = 7f;
 
     private Rigidbody2D mRigidBody;
+    private Animator mAnimator;
+
     private float directionX;
     private bool canJump = true;
+    private bool isFacingRight = true;
+    private string RUN_ANIMATION = "isRunning";
+    private string JUMP_ANIMATION = "isJumping";
 
     private void Awake()
     {
         mRigidBody = GetComponent<Rigidbody2D>();
+        mAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         MovePlayer();
         JumpPlayer();
+        AnimatePlayer();
     }
 
     private void MovePlayer()
     {
         directionX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3 (directionX, 0f, 0f) * moveForce * Time.deltaTime;
+
+        if (directionX > 0f && !isFacingRight)
+        {
+            FlipPlayer();
+        }
+        else if (directionX < 0f && isFacingRight)
+        {
+            FlipPlayer();
+        }
     }
 
     private void JumpPlayer()
@@ -45,11 +61,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             canJump = true;
+            mAnimator.SetBool(JUMP_ANIMATION, false);
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            mAnimator.SetBool("isDead", true);
             FindObjectOfType<GameManager>().GameOver();
         }
 
@@ -58,5 +75,38 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<GameManager>().LevelComplete();
         }
+
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void AnimatePlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            mAnimator.SetBool(JUMP_ANIMATION, true);
+            mAnimator.SetBool(RUN_ANIMATION, false);
+        }
+        else
+        {
+            if (directionX == 0)
+            {
+                mAnimator.SetBool(RUN_ANIMATION, false);
+            }
+            else
+            {
+                mAnimator.SetBool(RUN_ANIMATION, true);
+            }
+        }
+    }
+
+    private void FlipPlayer()
+    {
+        Vector2 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
+        isFacingRight = !isFacingRight;
     }
 }

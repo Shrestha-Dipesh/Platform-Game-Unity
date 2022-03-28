@@ -14,13 +14,28 @@ public class EnemyMovement : MonoBehaviour
         maxDistance = transform.position.x + 3;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MoveEnemy();
     }
 
-    void MoveEnemy()
+    private void MoveEnemy()
     {
         transform.position = new Vector3(Mathf.PingPong(Time.time * 2, maxDistance - minDistance) + minDistance, transform.position.y, transform.position.z);
+        if (transform.position.x == minDistance)
+        {
+            FlipEnemy();
+        }
+        else if (transform.position.x == maxDistance)
+        {
+            FlipEnemy();
+        }    
+    }
+
+    private void FlipEnemy()
+    {
+        Vector2 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
     }
 }
