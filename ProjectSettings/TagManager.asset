@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Platform
   - Enemy
+  - Coin
+  - Mushroom
+  - Emerald
   - Collectible
   layers:
   - Default
