@@ -47,6 +47,7 @@ public class MenuNavigator : MonoBehaviour
     {
         detailsMenu.SetActive(false);
         selectionMenu.SetActive(true);
+        Destroy(GameObject.Find("Player1(Clone)"));
     }
 
     public void DisplayDetailsMenu()
@@ -57,12 +58,16 @@ public class MenuNavigator : MonoBehaviour
         buttonClicked = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         if (buttonClicked == "Player 1 Button")
         {
-            playerName.text = "Circle";
-            playerImage.sprite = circleImage;
+            playerName.text = "Player 1";
+            GameObject player1 = Instantiate(Resources.Load("Player1") as GameObject);
+            player1.transform.position = new Vector3(-3.91f, -3.038f, 0f);
+            player1.transform.localScale = new Vector3(0.3900645f, 0.3900645f, 0.3900645f);
+            Destroy(player1.GetComponent("Rigidbody2D"));
+            Destroy(player1.GetComponent("Player"));
         }
         else if (buttonClicked == "Player 2 Button")
         {
-            playerName.text = "Square";
+            playerName.text = "Player 2";
             playerImage.sprite = squareImage;
         }
     }
