@@ -40,7 +40,7 @@ public class MenuNavigator : MonoBehaviour
         {
             GameManager.instance.SelectedCharacter = "Player 2";
         }
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void DisplaySelectionMenu()

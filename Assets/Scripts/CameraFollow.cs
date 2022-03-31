@@ -6,13 +6,13 @@ public class CameraFollow : MonoBehaviour
 {
     private Transform player;
     private Vector3 temporaryPosition;
-
-    [SerializeField]
     private float minimumX, maximumX;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        minimumX = 0;
+        maximumX = GameObject.Find("Finish Point").transform.position.x - 9f;
     }
 
     private void LateUpdate()

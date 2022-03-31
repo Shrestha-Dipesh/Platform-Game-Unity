@@ -155,7 +155,7 @@ MonoBehaviour:
   gameEnded: 0
   restartDelay: 1
   characters:
-  - {fileID: 8972239426008902972, guid: 6d35a3834c4e41343bffda5e840ee3ed, type: 3}
+  - {fileID: 4181536429899828455, guid: 83ba541b3206fa147b1c6183493ba14f, type: 3}
   - {fileID: 4922726317905564651, guid: 7e996120e7cdc414a9e29990f4c78385, type: 3}
 --- !u!4 &302802201
 Transform:

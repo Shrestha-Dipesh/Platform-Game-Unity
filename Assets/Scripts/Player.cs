@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             mAnimator.SetBool("isDead", true);
+            Destroy(mRigidBody);
+            Destroy(GetComponent("Player"));
             FindObjectOfType<GameManager>().GameOver();
         }
 
