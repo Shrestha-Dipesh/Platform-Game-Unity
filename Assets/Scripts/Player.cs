@@ -78,7 +78,19 @@ public class Player : MonoBehaviour
             FindObjectOfType<GameManager>().LevelComplete();
         }
 
-        if (collision.gameObject.CompareTag("Collectible"))
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            FindObjectOfType<GameManager>().IncreaseCoin(1);
+        }
+
+        if (collision.gameObject.CompareTag("Mushroom"))
+        {
+            Destroy(collision.gameObject);
+            FindObjectOfType<GameManager>().ChangeLife(1);
+        }
+
+        if (collision.gameObject.CompareTag("Emerald"))
         {
             Destroy(collision.gameObject);
         }
