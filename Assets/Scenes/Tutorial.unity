@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 922081428}
   - component: {fileID: 922081427}
   m_Layer: 5
-  m_Name: Try Again
+  m_Name: Game Over
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

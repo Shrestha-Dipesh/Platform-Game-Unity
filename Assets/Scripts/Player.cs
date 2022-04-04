@@ -93,6 +93,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Emerald"))
         {
             Destroy(collision.gameObject);
+            FindObjectOfType<GameManager>().LevelComplete();
         }
     }
 

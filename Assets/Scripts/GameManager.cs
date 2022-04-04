@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
         set { selectedCharacter = value; }
     }
 
-    private GameObject levelElements, completeUI, youDiedUI, pressToMoveText, pressToJumpText, stayAwayText, collectCoinText, tutorialCompleteUI, skipButton, tryAgainUI;
+    private GameObject levelElements, completeUI, youDiedUI, pressToMoveText, pressToJumpText, stayAwayText, collectCoinText, skipButton;
 
     private bool checkForSteps, firstStepCompleted, secondStepCompleted, thirdStepCompleted, fourthStepCompleted, fifthStepCompleted, sixthStepCompleted;
 
-    private int lifeCount = 3, coinCount = 0;
+    private int lifeCount = 3, coinCount = 0, tempLifeCount, tempCoinCount;
     private bool canCollect = false;
 
     public void Awake()
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         IEnumerator ExecuteCode(float time)
         {
             yield return new WaitForSeconds(time);
-            tryAgainUI.SetActive(true);
+            youDiedUI.SetActive(true);
             levelElements.SetActive(false);
         }
         StartCoroutine(ExecuteCode(0.5f));
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelFinishLoading(Scene scene, LoadSceneMode mode)
     {
+        canCollect = false;
         if (scene.name == "Tutorial")
         {
             firstStepCompleted = false;
@@ -88,16 +89,16 @@ public class GameManager : MonoBehaviour
             pressToJumpText = GameObject.Find("Press to jump");
             stayAwayText = GameObject.Find("Stay away");
             collectCoinText = GameObject.Find("Collect coin");
-            tutorialCompleteUI = GameObject.Find("Level Complete");
+            completeUI = GameObject.Find("Level Complete");
             levelElements = GameObject.Find("Level Elements");
-            tryAgainUI = GameObject.Find("Try Again");
+            youDiedUI = GameObject.Find("Try Again");
             skipButton = GameObject.Find("Skip");
 
             pressToJumpText.SetActive(false);
             stayAwayText.SetActive(false);
             collectCoinText.SetActive(false);
-            tutorialCompleteUI.SetActive(false);
-            tryAgainUI.SetActive(false);
+            completeUI.SetActive(false);
+            youDiedUI.SetActive(false);
             skipButton.SetActive(false);
 
             IEnumerator ShowSkip(float time)
@@ -112,9 +113,22 @@ public class GameManager : MonoBehaviour
         else
         {
             checkForSteps = false;
-            canCollect = true;
-            ChangeLife(0);
-            IncreaseCoin(0);
+            
+            if (scene.name == "Level 1")
+            {
+                tempLifeCount = lifeCount;
+                tempCoinCount = coinCount;
+                canCollect = true;
+                ChangeLife(0);
+                IncreaseCoin(0);
+
+                youDiedUI = GameObject.Find("You Died");
+                levelElements = GameObject.Find("Level Elements");
+                completeUI = GameObject.Find("Level Complete");
+                
+                youDiedUI.SetActive(false);
+                completeUI.SetActive(false);
+            }
         }
     }
 
@@ -187,8 +201,7 @@ public class GameManager : MonoBehaviour
         {
             if (GameObject.Find("Coin(Clone)") == null && GameObject.Find("Mushroom(Clone)") == null)
             {
-                tutorialCompleteUI.SetActive(true);
-                levelElements.SetActive(false);
+                LevelComplete();
             }
         }
     }
@@ -211,9 +224,9 @@ public class GameManager : MonoBehaviour
     {
         if (canCollect)
         {
-            this.lifeCount += lifeCount;
+            tempLifeCount += lifeCount;
             Text lifeCountUI = GameObject.Find("Life Count").GetComponent<Text>();
-            lifeCountUI.text = "x " + this.lifeCount;
+            lifeCountUI.text = "x " + tempLifeCount;
         }
     }
 
@@ -221,15 +234,15 @@ public class GameManager : MonoBehaviour
     {
         if (canCollect)
         {
-            this.coinCount += coinCount;
+            tempCoinCount += coinCount;
             Text coinCountUI = GameObject.Find("Coin Count").GetComponent<Text>();
 
             if (this.coinCount == 100)
             {
-                this.coinCount = 0;
+                tempCoinCount = 0;
                 ChangeLife(1);
             }
-            coinCountUI.text = "x " + this.coinCount;
+            coinCountUI.text = "x " + tempCoinCount;
         }
     }
 }
