@@ -71,13 +71,10 @@ public class Player : MonoBehaviour
             Destroy(GetComponent("Player"));
             FindObjectOfType<GameManager>().GameOver();
         }
+    }
 
-        if (collision.gameObject.CompareTag("Finish"))
-        {
-            Destroy(gameObject);
-            FindObjectOfType<GameManager>().LevelComplete();
-        }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
