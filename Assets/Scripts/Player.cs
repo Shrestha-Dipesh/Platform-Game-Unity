@@ -78,12 +78,16 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
+            GameObject coinEffect = Instantiate(Resources.Load("Coin Effect") as GameObject);
+            coinEffect.transform.position = collision.transform.position;
             FindObjectOfType<GameManager>().IncreaseCoin(1);
         }
 
         if (collision.gameObject.CompareTag("Mushroom"))
         {
             Destroy(collision.gameObject);
+            GameObject mushroomEffect = Instantiate(Resources.Load("Mushroom Effect") as GameObject);
+            mushroomEffect.transform.position = collision.transform.position;
             FindObjectOfType<GameManager>().ChangeLife(1);
         }
 
