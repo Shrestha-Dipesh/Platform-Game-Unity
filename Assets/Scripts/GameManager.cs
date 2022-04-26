@@ -73,16 +73,10 @@ public class GameManager : MonoBehaviour
     private void OnLevelFinishLoading(Scene scene, LoadSceneMode mode)
     {
         canCollect = false;
-        if (scene.name == "Tutorial")
-        {
-            firstStepCompleted = false;
-            secondStepCompleted = false;
-            thirdStepCompleted = false;
-            fourthStepCompleted = false;
-            fifthStepCompleted = false;
-            sixthStepCompleted = false;
+        GameObject player;
 
-            GameObject player;
+        if (scene.name == "Tutorial" || scene.name == "Level 1")
+        {
             if (selectedCharacter == "Player 1")
             {
                 player = Instantiate(characters[0]);
@@ -93,6 +87,15 @@ public class GameManager : MonoBehaviour
             }
 
             player.transform.parent = GameObject.Find("Level Elements").transform;
+        }
+        if (scene.name == "Tutorial")
+        {
+            firstStepCompleted = false;
+            secondStepCompleted = false;
+            thirdStepCompleted = false;
+            fourthStepCompleted = false;
+            fifthStepCompleted = false;
+            sixthStepCompleted = false;
             checkForSteps = true;
             pressToMoveText = GameObject.Find("Press to move");
             pressToJumpText = GameObject.Find("Press to jump");
