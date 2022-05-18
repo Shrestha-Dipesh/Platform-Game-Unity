@@ -10,7 +10,7 @@ public class SkipCutscene : MonoBehaviour
         //Press space to skip the cutscene
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Menu");
         }
     }
 }

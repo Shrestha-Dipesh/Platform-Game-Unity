@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 6
-  jumpForce: 35
+  jumpForce: 45
 --- !u!70 &5605632481079960113
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
