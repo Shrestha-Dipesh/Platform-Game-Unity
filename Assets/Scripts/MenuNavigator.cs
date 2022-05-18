@@ -30,6 +30,7 @@ public class MenuNavigator : MonoBehaviour
         Application.Quit();
     }
 
+    //Select the character based on button clicked and load next scene
     public void LoadGame()
     {
         if (buttonClicked == "Player 1 Button")
@@ -43,6 +44,7 @@ public class MenuNavigator : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
+    //Display the character selection menu screen
     public void DisplaySelectionMenu()
     {
         detailsMenu.SetActive(false);
@@ -50,11 +52,13 @@ public class MenuNavigator : MonoBehaviour
         Destroy(GameObject.Find("Player1(Clone)"));
     }
 
+    //Display the character detail screen
     public void DisplayDetailsMenu()
     {
         selectionMenu.SetActive(false);
         detailsMenu.SetActive(true);
 
+        //Instantiate the selected character prefab and select it as player
         buttonClicked = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         if (buttonClicked == "Player 1 Button")
         {

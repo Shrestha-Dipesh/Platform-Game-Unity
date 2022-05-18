@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        //Singleton pattern to make sure there is only instance of game manager
         if (instance == null)
         {
             instance = this;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        //Display the game over screen and decrease the life
         gameEnded = true;
         IEnumerator ExecuteCode(float time)
         {
@@ -72,10 +74,12 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelFinishLoading(Scene scene, LoadSceneMode mode)
     {
+        //Reset the components
         StopAllCoroutines();
         canCollect = false;
         GameObject player;
 
+        //Instantiate the selected character prefab
         if (scene.name == "Tutorial" || scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3")
         {
             if (selectedCharacter == "Player 1")
@@ -89,6 +93,8 @@ public class GameManager : MonoBehaviour
 
             player.transform.parent = GameObject.Find("Level Elements").transform;
         }
+
+        //Reset the tutorial level components
         if (scene.name == "Tutorial")
         {
             lifeCount = 3;
@@ -127,6 +133,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //Reset the components for rest of the levels
             checkForSteps = false;
             
             if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3")
@@ -147,8 +154,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Tutorial level instruction mechanism
     private void CheckSteps()
     {
+        //Check for player movement
         if (!firstStepCompleted)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -166,6 +175,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        //Check for player jump and load the enemies
         if (secondStepCompleted && !thirdStepCompleted)
         {
             thirdStepCompleted = true;
@@ -190,6 +200,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(ExecuteCode(3));
         }
 
+        //Load the coins and mushrooms
         if (fourthStepCompleted && !fifthStepCompleted)
         {
             fifthStepCompleted = true;
@@ -212,6 +223,8 @@ public class GameManager : MonoBehaviour
             }
             StartCoroutine(ExecuteCode(5));
         }
+
+        //Complete the tutorial
         if (sixthStepCompleted)
         {
             if (GameObject.Find("Coin(Clone)") == null && GameObject.Find("Mushroom(Clone)") == null)
@@ -221,6 +234,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Display level complete UI
     public void LevelComplete()
     {
         completeUI.SetActive(true);
@@ -229,12 +243,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //Allow step checks
         if (checkForSteps)
         {
             CheckSteps();
         }
     }
 
+    //Increase/Decrease the life and display in UI
     public void ChangeLife(int lifeCount)
     {
         if (canCollect)
@@ -245,6 +261,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Increase the coin count and display in UI
     public void IncreaseCoin(int coinCount)
     {
         if (canCollect)
@@ -261,6 +278,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Getter for lifeCount
     public int getLifeCount()
     {
         return lifeCount;

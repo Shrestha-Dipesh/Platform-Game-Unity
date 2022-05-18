@@ -10,7 +10,10 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        //Get the player position
         player = GameObject.FindWithTag("Player").transform;
+
+        //Set the camera limit
         minimumX = 0;
         maximumX = GameObject.Find("Finish Point").transform.position.x - 9f;
     }
@@ -22,9 +25,11 @@ public class CameraFollow : MonoBehaviour
             return;
         }
 
+        //Set the camera position to player position
         temporaryPosition = transform.position;
         temporaryPosition.x = player.position.x + 5;
 
+        //Stop the camera when the position reaches minimum or maximum position
         if (temporaryPosition.x < minimumX)
         {
             temporaryPosition.x = minimumX;

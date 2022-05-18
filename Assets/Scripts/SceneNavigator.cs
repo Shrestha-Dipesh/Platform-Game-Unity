@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigator : MonoBehaviour
 {
+    //Load the next scene
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //Load the menu scene
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
     }
 
+    //Restart the level and decrease the life
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -29,6 +32,7 @@ public class SceneNavigator : MonoBehaviour
         }
     }
 
+    //Restart the level only
     public void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

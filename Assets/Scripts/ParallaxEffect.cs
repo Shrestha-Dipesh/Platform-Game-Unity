@@ -20,9 +20,11 @@ public class ParallaxEffect : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Apply different speed with respect to the camera
         float distance = (cam.transform.position.x * parallaxDepth);
         transform.position = new Vector3(startPosition + distance, transform.position.y, transform.position.z);
 
+        //Repeat the background when the end is reached
         float temporaryPosition = (cam.transform.position.x * (1 - parallaxDepth));
         if (temporaryPosition > startPosition + length)
         {

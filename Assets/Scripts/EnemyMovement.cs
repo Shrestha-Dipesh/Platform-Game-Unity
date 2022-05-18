@@ -21,7 +21,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveEnemy()
     {
+        //Back and forth motion for enemy
         transform.position = new Vector3(Mathf.PingPong(Time.time * 2, maxDistance - minDistance) + minDistance, transform.position.y, transform.position.z);
+        
+        //Flip the enemy when facing right
         if (transform.position.x == minDistance)
         {
             FlipEnemy();
@@ -34,6 +37,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FlipEnemy()
     {
+        //Flip the enemy sprite
         Vector2 currentScale = transform.localScale;
         currentScale.x *= -1;
         transform.localScale = currentScale;
