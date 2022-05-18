@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private bool checkForSteps, firstStepCompleted, secondStepCompleted, thirdStepCompleted, fourthStepCompleted, fifthStepCompleted, sixthStepCompleted;
 
-    private int lifeCount = 3, coinCount = 0, tempCoinCount;
+    private int lifeCount = 3, coinCount = 0;
     private bool canCollect = false;
 
     public void Awake()
@@ -72,10 +72,11 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelFinishLoading(Scene scene, LoadSceneMode mode)
     {
+        StopAllCoroutines();
         canCollect = false;
         GameObject player;
 
-        if (scene.name == "Tutorial" || scene.name == "Level 1")
+        if (scene.name == "Tutorial" || scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3")
         {
             if (selectedCharacter == "Player 1")
             {
@@ -90,6 +91,8 @@ public class GameManager : MonoBehaviour
         }
         if (scene.name == "Tutorial")
         {
+            lifeCount = 3;
+            coinCount = 0;
             firstStepCompleted = false;
             secondStepCompleted = false;
             thirdStepCompleted = false;
@@ -126,9 +129,8 @@ public class GameManager : MonoBehaviour
         {
             checkForSteps = false;
             
-            if (scene.name == "Level 1")
+            if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3")
             {
-                tempCoinCount = coinCount;
                 canCollect = true;
                 ChangeLife(0);
                 IncreaseCoin(0);
@@ -247,15 +249,20 @@ public class GameManager : MonoBehaviour
     {
         if (canCollect)
         {
-            tempCoinCount += coinCount;
+            this.coinCount += coinCount;
             Text coinCountUI = GameObject.Find("Coin Count").GetComponent<Text>();
 
-            if (tempCoinCount == 100)
+            if (this.coinCount == 100)
             {
-                tempCoinCount = 0;
+                this.coinCount = 0;
                 ChangeLife(1);
             }
-            coinCountUI.text = "x " + tempCoinCount;
+            coinCountUI.text = "x " + this.coinCount;
         }
+    }
+
+    public int getLifeCount()
+    {
+        return lifeCount;
     }
 }

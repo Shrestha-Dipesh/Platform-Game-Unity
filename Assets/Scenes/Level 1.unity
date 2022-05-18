@@ -4999,7 +4999,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 134457794}
         m_TargetAssemblyTypeName: SceneNavigator, Assembly-CSharp
-        m_MethodName: RestartLevel
+        m_MethodName: ReloadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5865,6 +5865,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071284007147718076, guid: 13882874bbc78c243a7ee1baa248c6c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071284007147718077, guid: 13882874bbc78c243a7ee1baa248c6c8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071284007147718077, guid: 13882874bbc78c243a7ee1baa248c6c8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85000014
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071284007147718077, guid: 13882874bbc78c243a7ee1baa248c6c8, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -18,5 +18,19 @@ public class SceneNavigator : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager.getLifeCount() == 1)
+        {
+            gameManager.GameOver();
+        }
+        else
+        {
+            gameManager.ChangeLife(-1);
+        }
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
