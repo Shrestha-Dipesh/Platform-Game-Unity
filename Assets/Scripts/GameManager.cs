@@ -89,6 +89,8 @@ public class GameManager : MonoBehaviour
             else
             {
                 player = Instantiate(characters[1]);
+                GameObject mushroom = Instantiate(Resources.Load("Mushroom C") as GameObject);
+                mushroom.transform.parent = GameObject.Find("Level Elements").transform;
             }
 
             player.transform.parent = GameObject.Find("Level Elements").transform;
