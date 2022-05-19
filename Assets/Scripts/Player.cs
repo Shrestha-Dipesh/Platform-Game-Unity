@@ -108,6 +108,11 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             FindObjectOfType<GameManager>().LevelComplete();
         }
+
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void AnimatePlayer()

@@ -20,7 +20,6 @@ public class SceneNavigator : MonoBehaviour
     //Restart the level and decrease the life
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameManager gameManager = FindObjectOfType<GameManager>();
         if (gameManager.getLifeCount() == 1)
         {
@@ -29,6 +28,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             gameManager.ChangeLife(-1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

@@ -10,7 +10,7 @@ public class MenuNavigator : MonoBehaviour
     private GameObject selectionMenu, detailsMenu;
 
     [SerializeField]
-    private Text playerName;
+    private Text playerName, playerDescription;
 
     [SerializeField]
     private Image playerImage;
@@ -62,7 +62,8 @@ public class MenuNavigator : MonoBehaviour
         buttonClicked = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         if (buttonClicked == "Player 1 Button")
         {
-            playerName.text = "Player 1";
+            playerName.text = "Kakashi";
+            playerDescription.text = "\"The Ninja\"";
             GameObject player1 = Instantiate(Resources.Load("Player1") as GameObject);
             player1.transform.position = new Vector3(-3.91f, -3.038f, 0f);
             player1.transform.localScale = new Vector3(0.3900645f, 0.3900645f, 0.3900645f);
@@ -71,7 +72,8 @@ public class MenuNavigator : MonoBehaviour
         }
         else if (buttonClicked == "Player 2 Button")
         {
-            playerName.text = "Player 2";
+            playerName.text = "Emma";
+            playerDescription.text = "\"The Tensai\"";
             playerImage.sprite = squareImage;
         }
     }

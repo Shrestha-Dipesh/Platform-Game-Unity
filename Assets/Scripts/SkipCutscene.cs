@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SkipCutscene : MonoBehaviour
 {
-    void Update()
+    private void Update()
     {
         //Press space to skip the cutscene
         if (Input.GetKeyDown(KeyCode.Space))
