@@ -155,7 +155,7 @@ MonoBehaviour:
   gameEnded: 0
   characters:
   - {fileID: 4181536429899828455, guid: 83ba541b3206fa147b1c6183493ba14f, type: 3}
-  - {fileID: 4922726317905564651, guid: 7e996120e7cdc414a9e29990f4c78385, type: 3}
+  - {fileID: 6327810720218528475, guid: b1857e40ac7ef1f4d8295ac1ec14de9e, type: 3}
 --- !u!4 &302802201
 Transform:
   m_ObjectHideFlags: 0
@@ -203,9 +203,6 @@ MonoBehaviour:
   detailsMenu: {fileID: 1583027931}
   playerName: {fileID: 672956411}
   playerDescription: {fileID: 1418070673}
-  playerImage: {fileID: 0}
-  circleImage: {fileID: 21300000, guid: 2ffc58ebb63f45245adb5bed6f038f2b, type: 3}
-  squareImage: {fileID: 21300000, guid: 4563e372570c7884bbc3e19bf165c78b, type: 3}
 --- !u!4 &495932308
 Transform:
   m_ObjectHideFlags: 0
@@ -1596,8 +1593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 267, y: -135}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 278, y: -136}
+  m_SizeDelta: {x: 345.08, y: 422.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146341106
 MonoBehaviour:
@@ -1675,7 +1672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4563e372570c7884bbc3e19bf165c78b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231ff04926b85db4da5c151f80354bbc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

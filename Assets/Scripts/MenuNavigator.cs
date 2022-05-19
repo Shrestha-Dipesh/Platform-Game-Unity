@@ -12,12 +12,6 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField]
     private Text playerName, playerDescription;
 
-    [SerializeField]
-    private Image playerImage;
-
-    [SerializeField]
-    private Sprite circleImage, squareImage;
-
     private string buttonClicked;
 
     public void SelectCharacter()
@@ -50,6 +44,8 @@ public class MenuNavigator : MonoBehaviour
         detailsMenu.SetActive(false);
         selectionMenu.SetActive(true);
         Destroy(GameObject.Find("Player1(Clone)"));
+        Destroy(GameObject.Find("Player2(Clone)"));
+        Destroy(GameObject.Find("Mushroom C(Clone)"));
     }
 
     //Display the character detail screen
@@ -64,9 +60,11 @@ public class MenuNavigator : MonoBehaviour
         {
             playerName.text = "Kakashi";
             playerDescription.text = "\"The Ninja\"";
+
             GameObject player1 = Instantiate(Resources.Load("Player1") as GameObject);
             player1.transform.position = new Vector3(-3.91f, -3.038f, 0f);
             player1.transform.localScale = new Vector3(0.3900645f, 0.3900645f, 0.3900645f);
+
             Destroy(player1.GetComponent("Rigidbody2D"));
             Destroy(player1.GetComponent("Player"));
         }
@@ -74,7 +72,17 @@ public class MenuNavigator : MonoBehaviour
         {
             playerName.text = "Emma";
             playerDescription.text = "\"The Tensai\"";
-            playerImage.sprite = squareImage;
+
+            GameObject player2 = Instantiate(Resources.Load("Player2") as GameObject);
+            player2.transform.position = new Vector3(-3.91f, -3.038f, 0f);
+            player2.transform.localScale = new Vector3(0.3900645f, 0.3900645f, 0.3900645f);
+
+            Destroy(player2.GetComponent("Rigidbody2D"));
+            Destroy(player2.GetComponent("Player"));
+
+            GameObject mushroom = Instantiate(Resources.Load("Mushroom C") as GameObject);
+            mushroom.transform.position = new Vector3(-5.31f, -2.838f, 0f);
+            mushroom.transform.localScale = new Vector3(0.1900645f, 0.1900645f, 0.1900645f);
         }
     }
 }
