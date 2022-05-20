@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour
         //Check for player movement
         if (!firstStepCompleted)
         {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 firstStepCompleted = true;
                 IEnumerator ExecuteCode(float time)
@@ -181,26 +181,29 @@ public class GameManager : MonoBehaviour
         //Check for player jump and load the enemies
         if (secondStepCompleted && !thirdStepCompleted)
         {
-            thirdStepCompleted = true;
-            IEnumerator ExecuteCode(float time)
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                yield return new WaitForSeconds(time);
+                thirdStepCompleted = true;
+                IEnumerator ExecuteCode(float time)
+                {
+                    yield return new WaitForSeconds(time);
 
-                pressToJumpText.SetActive(false);
-                stayAwayText.SetActive(true);
-                GameObject enemy = Instantiate(Resources.Load("Enemy") as GameObject);
-                GameObject spike = Instantiate(Resources.Load("Spike") as GameObject);
-                enemy.transform.parent = GameObject.Find("Level Elements").transform;
-                enemy.transform.position = new Vector3(-0.2612625f, -4.062554f, 0f);
-                Vector2 currentScale = enemy.transform.localScale;
-                spike.transform.position = new Vector3(8.50f, -3.06f, 0f);
-                spike.transform.parent = GameObject.Find("Level Elements").transform;
-                currentScale.x *= -1;
-                enemy.transform.localScale = currentScale;
-                fourthStepCompleted = true;
+                    pressToJumpText.SetActive(false);
+                    stayAwayText.SetActive(true);
+                    GameObject enemy = Instantiate(Resources.Load("Enemy") as GameObject);
+                    GameObject spike = Instantiate(Resources.Load("Spike") as GameObject);
+                    enemy.transform.parent = GameObject.Find("Level Elements").transform;
+                    enemy.transform.position = new Vector3(-0.2612625f, -4.062554f, 0f);
+                    Vector2 currentScale = enemy.transform.localScale;
+                    spike.transform.position = new Vector3(8.50f, -3.06f, 0f);
+                    spike.transform.parent = GameObject.Find("Level Elements").transform;
+                    currentScale.x *= -1;
+                    enemy.transform.localScale = currentScale;
+                    fourthStepCompleted = true;
 
+                }
+                StartCoroutine(ExecuteCode(3));
             }
-            StartCoroutine(ExecuteCode(3));
         }
 
         //Load the coins and mushrooms
