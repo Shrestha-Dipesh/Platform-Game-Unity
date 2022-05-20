@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int lifeCount = 3, coinCount = 0;
     private bool canCollect = false;
 
+    private Joystick joystick;
+
     public void Awake()
     {
         //Singleton pattern to make sure there is only instance of game manager
@@ -118,6 +120,8 @@ public class GameManager : MonoBehaviour
             youDiedUI = GameObject.Find("Try Again");
             skipButton = GameObject.Find("Skip");
 
+            joystick = FindObjectOfType<Joystick>();
+
             pressToJumpText.SetActive(false);
             stayAwayText.SetActive(false);
             collectCoinText.SetActive(false);
@@ -160,10 +164,11 @@ public class GameManager : MonoBehaviour
     //Tutorial level instruction mechanism
     private void CheckSteps()
     {
+        
         //Check for player movement
         if (!firstStepCompleted)
         {
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            if (joystick.Horizontal >= .2f || joystick.Vertical <= -.2f)
             {
                 firstStepCompleted = true;
                 IEnumerator ExecuteCode(float time)
@@ -181,7 +186,7 @@ public class GameManager : MonoBehaviour
         //Check for player jump and load the enemies
         if (secondStepCompleted && !thirdStepCompleted)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            if (joystick.Vertical >= .5f)
             {
                 thirdStepCompleted = true;
                 IEnumerator ExecuteCode(float time)

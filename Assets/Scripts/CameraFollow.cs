@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour
 
         //Set the camera position to player position
         temporaryPosition = transform.position;
-        temporaryPosition.x = player.position.x + 5f;
+        temporaryPosition.x = player.position.x + 1f;
         temporaryPosition.y = player.position.y + 2.5f;
 
         //Stop the camera when the position reaches minimum or maximum position

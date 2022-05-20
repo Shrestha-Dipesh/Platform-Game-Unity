@@ -21,12 +21,15 @@ public class Player : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private Joystick joystick;
+
     private void Awake()
     {
         //Get the required components of the player
         mRigidBody = GetComponent<Rigidbody2D>();
         mAnimator = GetComponent<Animator>();
         audioSource = gameObject.AddComponent<AudioSource>();
+        joystick = FindObjectOfType<Joystick>();
     }
 
     private void Update()
@@ -53,8 +56,20 @@ public class Player : MonoBehaviour
 
     private void MovePlayer()
     {
-        //Move the player with arrow or A/D keys
-        directionX = Input.GetAxisRaw("Horizontal");
+        //Move the player with joystick
+        if (joystick.Horizontal >= .3f)
+        {
+            directionX = 1;
+        }
+        else if (joystick.Horizontal <= -.3f)
+        {
+            directionX = -1;
+        }
+        else
+        {
+            directionX = 0;
+        }
+
         transform.position += new Vector3 (directionX, 0f, 0f) * moveForce * Time.deltaTime;
         
         //Face the direction of movement
@@ -71,7 +86,7 @@ public class Player : MonoBehaviour
     private void JumpPlayer()
     {
         //Jump the player with arrow or W keys
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && canJump)
+        if (joystick.Vertical >= .5f && canJump)
         {
             canJump = false;
             mRigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -149,7 +164,7 @@ public class Player : MonoBehaviour
     private void AnimatePlayer()
     {
         //Animate the player based on the movement, i.e., idle, running or jumping
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if (joystick.Vertical >= .5f)
         {
             mAnimator.SetBool(JUMP_ANIMATION, true);
             mAnimator.SetBool(RUN_ANIMATION, false);
