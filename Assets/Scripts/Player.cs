@@ -19,11 +19,14 @@ public class Player : MonoBehaviour
     private string RUN_ANIMATION = "isRunning";
     private string JUMP_ANIMATION = "isJumping";
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         //Get the required components of the player
         mRigidBody = GetComponent<Rigidbody2D>();
         mAnimator = GetComponent<Animator>();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     private void Update()
@@ -53,7 +56,7 @@ public class Player : MonoBehaviour
         //Move the player with arrow or A/D keys
         directionX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3 (directionX, 0f, 0f) * moveForce * Time.deltaTime;
-
+        
         //Face the direction of movement
         if (directionX > 0f && !isFacingRight)
         {
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour
         {
             canJump = false;
             mRigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Jump"));
         }
     }
 
@@ -90,7 +94,17 @@ public class Player : MonoBehaviour
             mAnimator.SetBool("isDead", true);
             Destroy(mRigidBody);
             Destroy(GetComponent("Player"));
-            FindObjectOfType<GameManager>().GameOver();
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            gameManager.GameOver();
+
+            if (gameManager.SelectedCharacter == "Player 1")
+            {
+                audioSource.PlayOneShot(Resources.Load<AudioClip>("Male Death"));
+            }
+            else
+            {
+                audioSource.PlayOneShot(Resources.Load<AudioClip>("Female Death"));
+            }
         }
     }
 
@@ -102,6 +116,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             GameObject coinEffect = Instantiate(Resources.Load("Coin Effect") as GameObject);
             coinEffect.transform.position = collision.transform.position;
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Coin"));
 
             //Increase coin
             FindObjectOfType<GameManager>().IncreaseCoin(1);
@@ -112,6 +127,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             GameObject mushroomEffect = Instantiate(Resources.Load("Mushroom Effect") as GameObject);
             mushroomEffect.transform.position = collision.transform.position;
+            audioSource.PlayOneShot(Resources.Load<AudioClip>("Mushroom"));
 
             //Increase life of player
             FindObjectOfType<GameManager>().ChangeLife(1);
