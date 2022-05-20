@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         //Display the game over screen and decrease the life
         gameEnded = true;
+        Destroy(GameObject.Find("Background Audio"));
         IEnumerator ExecuteCode(float time)
         {
             yield return new WaitForSeconds(time);
@@ -147,7 +148,7 @@ public class GameManager : MonoBehaviour
                 youDiedUI = GameObject.Find("You Died");
                 levelElements = GameObject.Find("Level Elements");
                 completeUI = GameObject.Find("Level Complete");
-                gameOverUI = GameObject.Find("Game Over");
+                gameOverUI = GameObject.Find("Game Over Screen");
                 
                 youDiedUI.SetActive(false);
                 completeUI.SetActive(false);
@@ -232,6 +233,7 @@ public class GameManager : MonoBehaviour
             if (GameObject.Find("Coin(Clone)") == null && GameObject.Find("Mushroom(Clone)") == null)
             {
                 LevelComplete();
+                checkForSteps = false;
             }
         }
     }
@@ -241,6 +243,9 @@ public class GameManager : MonoBehaviour
     {
         completeUI.SetActive(true);
         levelElements.SetActive(false);
+        Destroy(GameObject.Find("Background Audio"));
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Emerald"));
     }
 
     private void Update()
