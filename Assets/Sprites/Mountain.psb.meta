@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -103,7 +103,6 @@ ScriptedImporter:
       width: 1920
       height: 668
     spriteID: e38a066e971044b469d81bffe0de318f
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -125,7 +124,6 @@ ScriptedImporter:
       width: 1920
       height: 818
     spriteID: 0073e84c96b34574f9b9225262af9e99
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,7 +145,6 @@ ScriptedImporter:
       width: 1920
       height: 949
     spriteID: e003ac59cdbdd244685a7a1c84979d3a
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -157,28 +154,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 1092}
-  - name: Sky
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1920
-      height: 1080
-    spriteID: 5683b1eb88be34746afd70e9e2a8cdad
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
   - name: Cloud
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +166,6 @@ ScriptedImporter:
       width: 1920
       height: 442
     spriteID: fe276b59623f116408194135870d5d7b
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -213,7 +187,6 @@ ScriptedImporter:
       width: 563
       height: 406
     spriteID: dd8c081259c28cc47ae80263d0c4a75f
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -223,23 +196,55 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 1932, y: -670}
+  - name: Sky
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1920
+      height: 1080
+    spriteID: 5683b1eb88be34746afd70e9e2a8cdad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
   platformSettings: []
   mosaicLayers: 1
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
-  importedTextureHeight: 2048
-  documentSize: {x: 1920, y: 1080}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 0
+  skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 4096
-  textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
-  characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: Front Mountain
@@ -249,6 +254,9 @@ ScriptedImporter:
     spriteID: e38a066e971044b469d81bffe0de318f
     layerID: 30
     mosaicPosition: {x: 4, y: 2875}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Mid Mountain
     spriteName: Mid Mountain
     isGroup: 0
@@ -256,6 +264,9 @@ ScriptedImporter:
     spriteID: 0073e84c96b34574f9b9225262af9e99
     layerID: 9
     mosaicPosition: {x: 4, y: 2049}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Back Mountain
     spriteName: Back Mountain
     isGroup: 0
@@ -263,6 +274,9 @@ ScriptedImporter:
     spriteID: e003ac59cdbdd244685a7a1c84979d3a
     layerID: 8
     mosaicPosition: {x: 4, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Cloud
     spriteName: Cloud
     isGroup: 0
@@ -270,6 +284,9 @@ ScriptedImporter:
     spriteID: fe276b59623f116408194135870d5d7b
     layerID: 38
     mosaicPosition: {x: 4, y: 3551}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Sun
     spriteName: Sun
     isGroup: 0
@@ -277,6 +294,9 @@ ScriptedImporter:
     spriteID: dd8c081259c28cc47ae80263d0c4a75f
     layerID: 37
     mosaicPosition: {x: 1932, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Sky
     spriteName: Sky
     isGroup: 0
@@ -284,13 +304,14 @@ ScriptedImporter:
     spriteID: 5683b1eb88be34746afd70e9e2a8cdad
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
-  characterData:
-    bones: []
-    parts: []
-    dimension: {x: 0, y: 0}
-    characterGroups: []
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Mountain Texture
   prefabAssetName: Mountain Prefab
   spriteLibAssetName: Mountain Sprite Lib
+  skeletonAssetName: 
   secondarySpriteTextures: []

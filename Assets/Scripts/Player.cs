@@ -40,12 +40,12 @@ public class Player : MonoBehaviour
         {
             if (isFacingRight)
             {
-                mushroom.transform.position = new Vector3(transform.position.x - 1.2f, transform.position.y + 2f, 0f);
+                mushroom.transform.position = new Vector3(transform.position.x - 1.2f, transform.position.y, 0f);
                 mushroom.transform.localScale = new Vector3(0.12f, 0.12f, 0.12f);
             }
             else
             {
-                mushroom.transform.position = new Vector3(transform.position.x + 1.2f, transform.position.y + 2f, 0f);
+                mushroom.transform.position = new Vector3(transform.position.x + 1.2f, transform.position.y, 0f);
                 mushroom.transform.localScale = new Vector3(-0.12f, 0.12f, 0.12f);
             }
         }
