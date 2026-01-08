@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="media/images/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <!--Loader-->
+    <div class="loader">
+        <h1>Loading</h1>
+        <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--Navigation Bar-->
+    <nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class = "nav-links">
+            <li><a href = "home.html" ><i class = "fas fa-home"></i> Home</a></li>
+            <li class = "active"><a href = "contact.html"><i class = "fas fa-phone-alt"></i> Contact</a></li>
+            <li><a href = "shop.html"><i class = "fas fa-store"></i> Shop</a></li>
+            <li><a href = "cart.html"><i class = "fas fa-shopping-cart"></i> Cart</a><div class = "cart-number">0</div></li>
+            <li>
+                <input class="l" type="checkbox">
+            </li>
+            <li>
+                <div class="search-box">
+                <input type="text" class = "search-txt" name="search" placeholder="Try to search" autocomplete="off">
+                <a href="#" class = "search-btn"><i class= "fa fa-search"></i> </a>
+                </div>
+            </li>
+            <li id = "signout"><a href = "index.html"><i class = "fas fa-sign-out-alt"></i>Sign Out</a></li>
+        </ul>
+    </nav>
+    <!--Contact Container-->
+    <div id="contact-container">
+        <div id="form-container">
+            <h1 id = "contact-title">Contact Us</h1>
+            <form class = "contact-form">
+                <div id="formerror"></div>
+                <div class="form-input half">
+                    <input type="text" id = "fname" name = "firstname" autocomplete="off" required>
+                    <label for="fname" class = "label-name">
+                        <span class = "content-name"> First Name</span>
+                    </label>
+                </div>
+                <div class="form-input half right">
+                    <input type="text" id = "lname" name = "lastname" autocomplete="off" required>
+                    <label for="lname" class = "label-name">
+                        <span class = "content-name">Last Name</span>
+                    </label>
+                </div>
+                <div class="form-input full">
+                    <input type="text" id = "email" name = "email" autocomplete="off" required>
+                    <label for="email" class = "label-name">
+                        <span class = "content-name">Email Address</span>
+                    </label>
+                </div>
+                <div class="text-input">
+                    <textarea name="message" id="msg" cols="30" rows="10" required></textarea>
+                    <label for="msg" class = "message-label"><span class = "message-content">Message</span></label>
+                </div>
+                <input type="submit" value="Send Us" class = 'btn' id = 'send'>
+            </form>
+        </div>
+        <div id="details-container">
+            <img src="media/images/me.png" alt="Author">
+            <div>
+                <h2><i class="fas fa-map-marker-alt"></i>Address</h2>
+                <p>Samakhusi-12, Kathmandu</p>
+            </div>
+            <div>
+                <h2><i class="fas fa-phone-alt"></i>Phone</h2>
+                <p>+977 9843809482</p>
+            </div>
+            <div>
+                <h2><i class = "fas fa-envelope"></i>Email</h2>
+                <p>shrestha.dipesh1999@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <!--HyperLink Container-->
+    <div class="hyperlink-container">
+        <a href="https://www.facebook.com/dipesh.shrestha.104203" target="_blank"><i class = "fab fa-facebook"></i></a>
+        <a href="https://twitter.com/Dipesh_1999" target="_blank"><i class = "fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/dpes_shrestha/" target="_blank"><i class = "fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/dipesh-shrestha-b3335819a/" target="_blank"><i class = "fab fa-linkedin"></i></a>
+        <a href="https://github.com/Shrestha-Dipesh" target="_blank"><i class = "fab fa-github"></i></a>
+    </div>
+    <!--Modal Container-->
+    <div class="modal-bg">
+        <div class="modal">
+            <h1>Your message has been sent successfully.</h1>
+            <img src="media/images/sent.svg" alt="sent">
+            <a href="home.html" class = "neon ncontact">
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                Return Home
+            </a>
+            <span class = "modal-close">X</span>
+        </div>
+    </div>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="icon" href="media/images/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <!--Loader-->
+    <div class="loader">
+        <h1>Loading</h1>
+        <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--Navigation Bar-->
+    <nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class = "nav-links">
+            <li><a href = "home.html" ><i class = "fas fa-home"></i> Home</a></li>
+            <li><a href = "contact.html"><i class = "fas fa-phone-alt"></i> Contact</a></li>
+            <li  class = "active"><a href = "shop.html"><i class = "fas fa-store"></i> Shop</a></li>
+            <li><a href = "cart.html"><i class = "fas fa-shopping-cart"></i> Cart</a><div class = "cart-number">0</div></li>
+            <li>
+                <input class="l" type="checkbox">
+            </li>
+            <li>
+                <div class="search-box">
+                <input type="text" class = "search-txt" name="search" placeholder="Try to search" autocomplete="off">
+                <a href="#" class = "search-btn"><i class= "fa fa-search"></i> </a>
+                </div>
+            </li>
+            <li id = "signout"><a href = "index.html"><i class = "fas fa-sign-out-alt"></i>Sign Out</a></li>
+        </ul>
+    </nav>
+    <!--Gallery-->
+    <div class="gallery">
+        <div class="box">
+            <div class="card" id = "card1">
+                <div class="front">
+                    <img src="media/images/image1.png" alt="NSUNS 4">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>NSUNS 4</h2>
+                    <p><span>$59.99</span> $29.99 <sup>50% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/SeBnDAD7mHE?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card2">
+                <div class="front">
+                    <img src="media/images/image2.png" alt="Overwatch">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Overwatch</h2>
+                    <p><span>$59.99</span> $19.99 <sup>67% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+                
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/dZl1yGUetjI?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card3">
+                <div class="front">
+                    <img src="media/images/image3.jpg" alt="GTA V">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>GTA V</h2>
+                    <p><span>$59.99</span> $0.00 <sup>100% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/QkkoHAzjnUs?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id ="card4">
+                <div class="front">
+                    <img src="media/images/image4.png" alt="Fornite">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Fornite</h2>
+                    <p>$0.00 <sup>Free</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/2gUtfBmw86Y?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card5">
+                <div class="front">
+                    <img src="media/images/image5.jpg" alt="Assassin">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Assassins Creed</h2>
+                    <p><span>$59.99</span> $56.69 <sup>5% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/RjQ6ZtyXoA0?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card6">
+                <div class="front">
+                    <img src="media/images/image6.jpg" alt="POP">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Prince of Persia</h2>
+                    <p><span>$59.99</span> $9.45 <sup>84% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/T2WbkJqqXbc?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card7">
+                <div class="front">
+                    <img src="media/images/image7.jpg" alt="Dota 2">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Dota 2</h2>
+                    <p>$0.00 <sup>Free</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/-cSFPIwMEq4?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card8">
+                <div class="front">
+                    <img src="media/images/image8.png" alt="Cyberpunk">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Cyberpunk 2077</h2>
+                    <p><span>$59.99</span> $29.99 <sup>50% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/UjxS9ciNlII?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card9">
+                <div class="front">
+                    <img src="media/images/image9.jpg" alt="Mk11">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Mortal Kombat</h2>
+                    <p><span>$59.99</span> $49.99 <sup>17% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/7zwQPJmg-Kg?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card10">
+                <div class="front">
+                    <img src="media/images/image10.jpg" alt="Witcher">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Witcher 3</h2>
+                    <p><span>$59.99</span> $39.99 <sup>33% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/B00E5f7-yz4?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card11">
+                <div class="front">
+                    <img src="media/images/image11.png" alt="Aphalt">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Asphalt 9</h2>
+                    <p>$0.00 <sup>Free</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/ot63S91Ihwk?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card12">
+                <div class="front">
+                    <img src="media/images/image12.jpg" alt="Pubg">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>PUBG</h2>
+                    <p><span>$59.99</span> $14.99 <sup>75% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/_LTiEXMc5J0?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card13">
+                <div class="front">
+                    <img src="media/images/image13.png" alt="God of war">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>God of War</h2>
+                    <p><span>$59.99</span> $14.99 <sup>75% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/VJMK8oFY1rA?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card14">
+                <div class="front">
+                    <img src="media/images/image14.jpg" alt="Fifa">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Fifa 16</h2>
+                    <p><span>$59.99</span> $14.99 <sup>75% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/vgQNOIhRsV4?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card15">
+                <div class="front">
+                    <img src="media/images/image15.jpg" alt="Devil may cry">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Devil May Cry</h2>
+                    <p><span>$59.99</span> $24.99 <sup>58% Off</sup></p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/p2lWUQHUapM?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="box">
+            <div class="card" id = "card16">
+                <div class="front">
+                    <img src="media/images/image16.jpg" alt="Dark souls">
+                </div><!--Front End-->
+                <div class="back">
+                    <h2>Dark Souls</h2>
+                    <p>$59.99</p>
+                    <div class="buttons">
+                        <button class = "btn1"><i class = "fas fa-cart-plus"></i> Add to Cart</button>
+                        <button class = "btn2"><i class = "fas fa-play-circle"></i> Watch Trailer</button>
+                    </div>
+                </div><!--Back End-->
+            </div><!--Card End-->
+        </div><!--Box End-->
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/qRhb9UduYmw?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div><!--Gallery End-->
+    <div class="buy">
+        <img src="media/images/tick.png" alt="tick">
+        <h1>Game added to cart</h1>
+    </div>
+    <div class="already">
+        <img src="media/images/wrong.png" alt="tick">
+        <h1>Game already in cart</h1>
+    </div>
+    
+    <button id = "topBtn"><i class = "fa fa-chevron-up"></i></button>
+    <div id="video-overlay"></div>
+    <script src="scripts/video.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/shop.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/loader.js"></script>
+</body>
+</html>

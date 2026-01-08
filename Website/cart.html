@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" href="media/images/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <!--Loader-->
+    <div class="loader">
+        <h1>Loading</h1>
+        <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--Navigation Bar-->
+    <nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class = "nav-links">
+            <li><a href = "home.html" ><i class = "fas fa-home"></i> Home</a></li>
+            <li><a href = "contact.html"><i class = "fas fa-phone-alt"></i> Contact</a></li>
+            <li><a href = "shop.html"><i class = "fas fa-store"></i> Shop</a></li>
+            <li class = "active"><a href = "cart.html"><i class = "fas fa-shopping-cart"></i> Cart</a><div class = "cart-number">0</div></li>
+            <li>
+                <input class="l" type="checkbox">
+            </li>
+            <li>
+                <div class="search-box">
+                <input type="text" class = "search-txt" name="search" placeholder="Try to search" autocomplete="off">
+                <a href="#" class = "search-btn"><i class= "fa fa-search"></i> </a>
+                </div>
+            </li>
+            <li id = "signout"><a href = "index.html"><i class = "fas fa-sign-out-alt"></i>Sign Out</a></li>    
+        </ul>
+    </nav>
+    <div class="cart">
+        
+    </div>
+    <!--Music Pads-->
+    <div class="pads">
+        <div class="pad1">
+            <audio src="media/sounds/guitar.mp3" class = "sound"></audio>
+        </div>
+        <div class="pad2">
+            <audio src="media/sounds/clay.mp3" class = 'sound'></audio>
+        </div>
+        <div class="pad3">
+            <audio src="media/sounds/chord.mp3" class = "sound"></audio>
+        </div>
+        <div class="pad4">
+            <audio src="media/sounds/bubbles.mp3" class = "sound"></audio>
+        </div>
+        <div class="pad5">
+            <audio src="media/sounds/moon.mp3" class = "sound"></audio>
+        </div>
+        <div class="pad6">
+            <audio src="media/sounds/ufo.mp3" class = "sound"></audio>
+        </div>
+    </div>
+    <!--Modal Container-->
+    <div class="modal-bg">
+        <div class="modal" id = "cart-modal">
+            <div class="cart-selection">
+                <ul>
+                    <li>
+                        <label for="title_1">
+                            <input type="radio" id="title_1" name="title" value="vi" checked>
+                            <img src="media/images/visa.png" alt="visa">
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_2">
+                            <input type="radio" id="title_2" name="title" value="mc">
+                            <img src="media/images/mastercard.png" alt="mastercard">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="cart-error"></div>
+            <div class="form-input full cart-input" id = "credit-div">
+                <input type="tel" id = "number" name = "number" autocomplete="off" required>
+                <label for="number" class = "label-name">
+                    <span class = "content-name">Credit Card Number</span>
+                </label>
+            </div>
+            <div class="names">
+                <div class="form-input half cart-input">
+                    <input type="text" id = "finame" name = "firstname" autocomplete="off" required>
+                    <label for="finame" class = "label-name">
+                        <span class = "content-name"> First Name</span>
+                    </label>
+                </div>
+                <div class="form-input half right cart-input">
+                    <input type="text" id = "laname" name = "lastname" autocomplete="off" required>
+                    <label for="laname" class = "label-name">
+                        <span class = "content-name">Last Name</span>
+                    </label>
+                </div>
+            </div>
+            <div class="names">
+                <div class="form-input half cart-input">
+                    <input type="text" id = "edate" name = "firstname" autocomplete="off" required>
+                    <label for="edate" class = "label-name">
+                        <span class = "content-name">Expiry Date</span>
+                    </label>
+                </div>
+                <div class="form-input half right cart-input">
+                    <input type="text" id = "cvc" name = "lastname" autocomplete="off" required>
+                    <label for="cvc" class = "label-name">
+                        <span class = "content-name">CVC</span>
+                    </label>
+                </div>
+            </div>
+            <a href="#" class = "neon ncontact" id = 'confirm-btn'>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                Confirm Purchase
+            </a>
+            <span class = "modal-close">X</span>
+        </div>
+    </div>
+    <button id = "topBtn"><i class = "fa fa-chevron-up"></i></button>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/music.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/loader.js"></script>
+</body>
+</html>

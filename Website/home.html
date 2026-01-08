@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="media/images/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+    .swiper-container {
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 190px;
+      height: 190px;
+        background: white;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006) ;
+    }
+    @media screen and (max-width: 800px){
+        .swiper-slide{
+            -webkit-box-reflect: initial;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!--Loader-->
+    <div class="loader">
+        <h1>Loading</h1>
+        <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div id="video-container" class = "nav-container">
+            <video src="media/videos/main.mp4" muted loop autoplay class = "video-background"></video>
+            <h1 class = "fancy">Gametronix&nbsp;2.0</h1>
+            <h6 style = "margin-bottom: 30px;">Take Gaming to the next level</h6>
+            <a href="Abyss.exe" class = "neon" download>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <i class = "fas fa-download"></i> Windows <i class = "fab fa-windows"></i>
+            </a>
+            <a href="Abyss.apk" class = "neon" download>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <span class = "hover-btn"></span>
+                <i class = "fas fa-download"></i> Android <i class = "fab fa-android"></i>
+            </a>
+        </div>
+        <!--Navigation Bar-->
+        <nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class = "nav-links">
+                <li class = "active"><a href = "home.html" ><i class = "fas fa-home"></i> Home</a></li>
+                <li><a href = "contact.html"><i class = "fas fa-phone-alt"></i> Contact</a></li>
+                <li><a href = "shop.html"><i class = "fas fa-store"></i> Shop</a></li>
+                <li><a href = "cart.html"><i class = "fas fa-shopping-cart"></i> Cart</a><div class = "cart-number">0</div></li>
+                <li>
+                    <input class="l" type="checkbox">
+                </li>
+                <li>
+                    <div class="search-box">
+                    <input type="text" class = "search-txt" name="search" placeholder="Try to search" autocomplete="off">
+                        <a href="#" class = "search-btn"><i class= "fa fa-search"></i> </a>
+                    </div>
+                </li>
+                <li id = "signout"><a href = "index.html"><i class = "fas fa-sign-out-alt"></i>Sign Out</a></li>
+            </ul>
+        </nav>
+        <!--Trailer Container-->
+        <div class="trailer-container nav-container" id = "trail-div">
+            <div class="trailer">
+                <h2 class = "trailer-title">Sneak</h2>
+                <iframe src="https://www.youtube.com/embed/SeBnDAD7mHE?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h2 class = "trailer-title">Peek</h2>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="media/images/image1.png" alt="Naruto" id = "img1"></div>
+                  <div class="swiper-slide"><img src="media/images/image8.png" alt="CyberPunk 2077" id = "img2"></div>
+                  <div class="swiper-slide"><img src="media/images/image3.jpg" alt="GTA V" id = "img3"></div>
+                  <div class="swiper-slide"><img src="media/images/image2.png" alt="Overwatch" id = "img4"></div>
+                  <div class="swiper-slide"><img src="media/images/image6.jpg" alt="Prince of Persia" id = "img5"></div>
+                  <div class="swiper-slide"><img src="media/images/image4.png" alt="Fortnite" id = "img6"></div>
+                  <div class="swiper-slide"><img src="media/images/image11.png" alt="Asphalt" id = "img7"></div>
+                </div>
+              </div>
+        </div>
+        <!--Best Games Container-->
+        <div class="container best-game nav-container" id = "game-div">
+            <h1 id = "top-game">Top Selling Games</h1>
+            <div class="wrapper">
+    
+                <div class="best-container" id="c2">
+                    <div class="overlay">
+                        <h4 class = "title">CyberPunk 2077</h4>
+                        <p class = "description">An arcade thriller game that took the world by storm</p>
+                        <button class = "btn2" id = "alone1">Shop Now</button>
+                    </div>
+                </div>
+                <div class="best-container" id="c1">
+                    <div class="overlay">
+                        <h4 class = "title">Mortal Kombat</h4>
+                        <p class = "description">An gory fighting game that took the world by storm</p>
+                        <button class = "btn2" id = "alone2">Shop Now</button>
+                    </div>
+                </div>
+                <div class="best-container" id="c0">
+                    <div class="overlay">
+                        <h4 class = "title">NSUNS4</h4>
+                        <p class = "description">An anime fighting game that took the world by storm</p>
+                        <button class = "btn2" id = "alone3">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Last Container-->
+        <div class="container nav-container" id = "last-container">
+            <div class="slide-container">
+                <h1 id = "discover">Discover the magic</h1>
+                <div class="icon icon1"><p>Available on PC</p><i class = "fas fa-laptop"></i></div>
+                <div class="icon icon2"><p>Available on Android/IOS</p><i class = "fas fa-mobile-alt"></i></div>
+                <div class="cursor"></div>
+                <div class="content">
+                </div>
+                <div class="imgbox">
+                </div>
+            </div>
+            <footer>
+                <p>&copy;Dipesh Shrestha 2020, All Rights Reserved</p>
+            </footer>
+            
+        </div>
+        <!--Dot Menu-->
+        <div class="navmenu">
+            <a href="#video-container"><div class="dot enable"></div></a>
+            <a href="#trail-div"><div class="dot"></div></a>
+            <a href="#game-div"><div class="dot"></div></a>
+            <a href="#last-container"><div class="dot"></div></a>
+         </div>
+        
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts/animation.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/loader.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows : true,
+          },
+          loop: true,
+          autoplay: {
+              delay: 1500,
+              disableOnInteraction: false,
+          }
+        });
+      </script>
+</body>
+</html>
